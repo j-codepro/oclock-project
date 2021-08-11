@@ -1,0 +1,28 @@
+@use 'reset';
+@use 'vars' as v;
+
+/*
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+}
+*/
+
+#root {
+  font-family: v.$fontHeading;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: v.$backgroundColor;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+

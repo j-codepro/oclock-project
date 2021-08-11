@@ -1,0 +1,64 @@
+@use 'src/styles/_vars.scss' as v;
+
+.mainMember {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px 25px 100px 25px;
+  align-items: center;
+  justify-content: center;
+    align-self: center;
+    flex-grow: 1;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:rgba(255,255,255,.80);
+  border-radius: 16px;
+  box-shadow: v.$shadow;
+  width: 320px;
+  margin: 20px;
+  padding: 10px 40px 10px 40px;
+
+  &__img {
+    object-fit: contain;
+    width: 250px;
+    margin-bottom: 20px 40px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    color: v.$darkColor;
+    margin-bottom: 10px;
+  }
+
+  &__role {
+    font-size: 17px;
+    font-weight: 600;
+    color: v.$primaryColor;
+    margin-bottom: 20px;
+  }
+
+  &__github {
+    background-color: v.$primaryColor;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+    width: 200px;
+    margin: 20px 0;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainMember {
+    margin: 30px 25px 50px 25px;
+  }
+}

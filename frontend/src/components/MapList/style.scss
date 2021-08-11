@@ -1,0 +1,59 @@
+@use 'src/styles/_vars.scss' as v;
+@use "sass:color";
+
+.map-list {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 2.5rem;
+  transition: height ease-in-out .5s;
+
+  &--open {
+    height: 100vh;
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 20px 10px rgba(0,0,0,.1) inset;
+  }
+
+  &--open {
+    &:before {
+      pointer-events: none;
+    }
+  }
+
+  &__button-open {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 35px;
+    padding: 12px 35px;
+    margin: 10px 20px;
+    border: 2px solid color.scale(v.$primaryColor, $alpha: -50%);
+    color: v.$primaryColor;
+    background: #ffffff;
+    border-radius: 40px;
+    font-size: 1.05rem;
+  }
+
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .map-list {
+    height: 250px;
+    &--open {
+      height: 100vh;
+    }
+  }
+}

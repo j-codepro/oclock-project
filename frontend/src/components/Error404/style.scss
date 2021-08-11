@@ -1,0 +1,44 @@
+@use 'src/styles/_vars.scss' as v;
+
+.mainError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 150px 25px 310px 25px;
+  background-image: url('src/assets/images/bg_error404.svg');
+  background-repeat: no-repeat;
+  background-position: center right -50px;
+  background-size: max(280px + 25%);
+  flex-grow: 1;
+}
+
+.title {
+  font-size: clamp(30px, 3vw, 60px);
+  font-weight: 600;
+  color: v.$darkColor;
+  line-height: 1.15;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: clamp(30px, 3vw, 15px);
+  font-weight: 600;
+  color: v.$darkColor;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.subsubtitle {
+  font-size: clamp(30px, 3vw, 15px);
+  font-weight: 600;
+  color: v.$primaryColor;
+  line-height: 1.15;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .mainError {
+    background-image: none;
+  }
+}

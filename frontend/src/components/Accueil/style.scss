@@ -1,0 +1,137 @@
+@use 'src/styles/_vars.scss' as v;
+
+.home{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  &__no-result {
+    padding-top: 3rem;
+    text-align : center;
+    font-size  : 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &--color {
+      color : v.$primaryColor;
+    }
+  }
+
+  &__no-result-img {
+    position  : relative;
+    margin-top: -5vw;
+    width     : 700px;
+    max-width : 90%;
+    height    : auto;
+  }
+}
+
+.hero {
+  //border: 1px solid grey;
+  padding-top: 6vh;
+  padding-bottom: max(30px, 2vh);
+  margin: 0 20px;
+  width: calc(100% - 40px);
+  max-width: 1240px;
+
+  &--logged {
+    padding-top: 3vh;
+    padding-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: clamp(30px, 3vw, 60px);
+    font-weight: 600;
+    color: v.$darkColor;
+    line-height: 1.15;
+  }
+
+  &__txt-user--orange{
+    color: v.$primaryColor;
+    font-weight: 600;
+  }
+
+  &__txt-user--green {
+    color: v.$secondaryColor;
+    font-weight: 600;
+  }
+
+  &__title-color {
+    color: v.$primaryColor;
+  }
+
+  &__sub-title {
+    display: block;
+    padding-top: 2vw;
+    font-size: clamp(15px, 1.25vw, 22px);
+    line-height: 1.5;
+    opacity: .8;
+  }
+
+  &__txt-user {
+    display: block;
+    position: relative;
+    padding-top: 1.5rem;
+    font-size: clamp(15px, 1.25vw, 22px);
+    line-height: 1.5;
+    opacity: .8;
+    padding-left: 80px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url('src/assets/images/points.svg');
+      width: 60px;
+      height: 60px;
+      left: 0;
+      top: 1rem;
+    }
+    
+  }
+}
+
+
+@media (min-width: 960px) {  
+  .home--img {
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 10vh;
+      right: 0;
+      height: min(80vh, 700px);
+      background-image: url('src/assets/images/bg_homepage.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right top;
+      box-shadow: 0 -200px 150px -50px v.$backgroundColor inset;
+    }
+
+    &.home--logged {
+      &::before {
+        height: 500px;
+      }
+    }
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .hero {
+    &__sub-title {
+      width: 50%;
+    }
+
+    &--logged {
+      padding-bottom: 0;
+    }
+  }
+}
+

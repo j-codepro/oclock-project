@@ -1,0 +1,129 @@
+@use 'src/styles/_vars.scss';
+@use "sass:color";
+
+.card {
+  position: relative;
+  background-color:rgba(255,255,255,.80);
+  border-radius: 16px;
+  box-shadow: vars.$shadow;
+  transition: all 0.3s;
+  width: 280px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  &--user {
+    border: 2px solid color.scale(vars.$primaryColor, $alpha: -50%);
+    &::before {
+      content: 'Je participe';
+      background-image: url('src/assets/icons/check.svg');
+      background-size: 15px;
+      background-position: left 8px center;
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 115px;
+      height: 24px;
+      background-color: vars.$primaryColor;
+      left: 50%;
+      top: 0;
+      margin-top: -12px;
+      margin-left: -12px;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #ffffff;
+      line-height: 24px;
+      padding-left: 28px;
+      margin-left: -58px;
+    }
+  }
+
+  &--creator {
+    border: 2px solid color.scale(vars.$secondaryColor, $alpha: -50%);
+    &::before {
+      content: 'J\'organise';
+      background-image: url('src/assets/icons/pencil.svg');
+      background-color: vars.$secondaryColor;
+      background-size: 12px;
+      width: 105px;
+      margin-left: -52px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 25px 0 20px;
+    border: none;
+    background: none;
+    border-radius: 16px;
+  }
+
+  &__image {
+    width: 200px;
+    margin: 15px auto 10px auto;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-size: 19px;
+    font-weight: 500;
+    color: vars.$darkColor;
+    margin-bottom: 20px;
+  }
+
+  &__sport {
+    font-size: 0.9em;
+    opacity: .3;
+    padding-bottom: .75rem;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    color: vars.$primaryColor;
+    line-height: 1.4;
+  }
+
+  &__infos {
+    width: 100%;
+  }
+
+  &__icon {
+    width: 28px;
+    margin-right: 12px;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 300;
+    color: vars.$LightDarkColor;
+    line-height: 24px;
+    margin: 20px 0 30px 0;
+  }
+
+  &__join {
+    background-color: vars.$primaryColor;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s;
+    margin: 0 0 40px 0;
+  }
+
+  &__join:hover{
+    box-shadow: vars.$shadow;
+  }
+
+}

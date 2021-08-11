@@ -1,0 +1,25 @@
+prefer, 0N SPORT, 0N USER
+:
+SPORT : name, icon
+have, 11 ACTIVITY, 0N SPORT
+
+:
+create, 11 ACTIVITY, 0N USER
+
+USER_PLACE: address, city, department, google_place_key, lat, lng, region
+stay, 1N USER_PLACE, 11 USER
+USER : email, pseudo, password, lastname, firstname, avatar, reward_count, admin
+:
+subscribe, 1N ACTIVITY, 0N USER
+ACTIVITY : title, description, illustration, date, time, duration, participant_count, min_participant
+at, 1N ACTIVITY_PLACE, 11 ACTIVITY
+ACTIVITY_PLACE : address, city, department, google_place_key, lat, lng, region, private, indoor
+
+USER_GRADE: name, point
+deserve, 11 USER, ON USER_GRADE
+:
+write, 11 MESSAGE, 0N USER
+MESSAGE : comment
+contain, 11 MESSAGE, 0N ACTIVITY
+get, 11 ACTIVITY, 0N ACTIVITY_STATUT
+ACTIVITY_STATUT: name

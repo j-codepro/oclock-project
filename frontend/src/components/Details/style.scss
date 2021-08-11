@@ -1,0 +1,248 @@
+@use 'src/styles/_vars.scss' as v;
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 100px 25px 100px;
+  background-repeat: no-repeat;
+  background-position: center right 70px;
+  background-size: contain;
+
+  &__pin{
+    width: 50px;
+  }
+
+  &__userIcon, &__participantsIcon{
+    width: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-weight: 600;
+    color: v.$primaryColor;
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  &__timeplace {
+    font-size: 1.5rem;
+    color: v.$darkColor;
+    padding-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__duration {
+    font-size: 1.5rem;
+    color: v.$darkColor;
+    padding-top: 5px;
+  }
+
+  &__join {
+    background-color: v.$primaryColor;
+    transition: all 0.3s;
+    padding: 15px 30px;
+    font-size: 1.05em;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    margin-top: 30px;
+    font-weight: 600;
+    width: 200px;
+  }
+
+  &__join-quit {
+    background-color: v.$secondaryColor;
+  }
+
+  &__join:hover {
+    box-shadow: v.$shadow;
+  }
+
+  &__join-error {
+    background-color: rgb(255, 45, 45);
+  }
+
+  &__details {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    color: v.$darkColor;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    line-height: 1.2;
+    text-align: justify;
+    flex: 2;
+    padding: 40px;
+    margin-right: 25px;
+  }
+
+  &__descriptionTitle{
+    color: v.$primaryColor;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__description span {
+    color: v.$primaryColor;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__creator {
+    justify-self: center;
+    background-color:  rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 40px;
+    flex: 1;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__participants {
+    justify-self: center;
+    background-color:  rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__pseudo {
+    color: v.$darkColor;
+    font-size: 1.5rem;
+  }
+
+  &__role {
+    color: v.$LightDarkColor;
+    margin-top: 5px;
+  }
+
+  &__participantsNumber {
+    color: v.$darkColor;
+    font-size: 1.5rem;
+  }
+
+  &__minParticipants {
+    margin-top: 5px;
+    color: v.$LightDarkColor;
+  }
+
+  &__map {
+    height: 100%;
+    border-radius: 16px;
+    border: none;
+  }
+
+  &__map-messages {
+    margin: 0 100px 50px 100px;
+    display: flex;
+    flex: 1;
+  }
+}
+
+.mapboxgl-canvas {
+  outline: none;
+  border: none;
+}
+
+.activity__map {
+  flex: 1;
+  margin-right: 25px;
+  height: 400px;
+}
+
+
+@media (max-width: 800px) {
+  .activity__details {
+    grid-template-columns: 1fr;
+  }
+
+  .activity__pseudo {
+    margin-top: 15px;
+  }
+
+  .activity__participantsNumber {
+    margin-top: 15px;
+  }
+
+  .activity__map{
+    margin: 0px 40px 80px;
+  }
+  .activity__map-messages {
+    margin: 0 45px 50px 45px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .activity {
+    background-image: none !important;
+    align-items: center;
+    padding: 80px 20px 25px;
+
+    &__header{
+      margin-left: 0;
+      align-items: center;
+    }
+
+    &__details {
+      flex-direction: column;
+    }
+    &__timeplace {
+      text-align: center;
+    }
+
+    &__join {
+      width: 80%;
+      padding: 15px 30px;
+    }
+
+    &__participants, &__creator, &__description {
+      margin: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    &__pseudo {
+      margin-top: 0;
+    }
+    &__userIcon, &__participantsIcon{
+      margin-right: 10px;
+      width: 30px;
+    }
+    &__participantsNumber {
+      margin-top: 0;
+    }
+
+    &__map {
+      flex: initial;
+      margin: 0 0 50px 0;
+    }
+    &__map-messages {
+      flex-direction: column;
+      margin: 0 45px 50px;
+    }
+  }
+}

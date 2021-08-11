@@ -1,0 +1,59 @@
+@use 'src/styles/_vars.scss' as v;
+
+.filter {
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: v.$container-max-width;
+  flex-wrap: wrap;
+
+  &__item {
+    //border: 1px solid grey;
+    margin: 10px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  &__picture {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__item-txt {
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+  &__label {
+    border: 2px solid rgba(0,0,0,.1);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0; 
+    &:checked ~ * {
+      border: 2px solid v.$primaryColor;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__button {
+    padding: 12px 35px;
+    margin: 10px v.$container-padding;
+    background: v.$primaryColor;
+    border: none;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 1.05rem;
+  }
+}

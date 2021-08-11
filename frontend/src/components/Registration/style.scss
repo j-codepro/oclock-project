@@ -1,0 +1,150 @@
+@use 'src/styles/_vars.scss';
+
+.registration{
+  // background-image: url('src/assets/images/bg_connexion.svg');
+  //background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 30px 0 0 0;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-size: 16px;
+    cursor: auto;
+  }
+
+  &__inputName {
+    color: vars.$LightDarkColor;
+    margin: 0 0 10px 25px;
+    margin-bottom: 15px;
+  }
+
+  &__required {
+    color: vars.$primaryColor;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__container label:first-child {
+    margin-right: 25px;
+  }
+
+  &__container:last-child {
+    margin: 30px 0 80px 0;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 45px;
+    color: vars.$darkColor;
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    box-shadow: vars.$shadow;
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+
+  &__lastname, &__firstname {
+    width: 100%;
+  }
+
+  &__input:not(.password:first-of-type) {
+    margin-bottom: 25px;
+  }
+
+  &__submit {
+    background-color: vars.$primaryColor;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    transition: all 0.3s;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  &__submit:hover {
+    box-shadow: vars.$shadow;
+  }
+
+  &__noAccount {
+    font-size: 16px;
+    color: vars.$LightDarkColor;
+  }
+
+  &__error {
+    color: rgb(247, 8, 8);
+    margin-left: 10px;
+  }
+
+  &__link {
+    display: inline;
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    color: vars.$LightDarkColor;
+  }
+
+  &__textarea {
+    font-family: Poppins, sans-serif;
+    max-width: 597px;
+    min-width: 597px;
+    min-height: 150px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+}
+
+@media (max-width: 612px) {
+  .registration{
+
+    &__submit {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &__form {
+      width: 90%;
+    }
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__container label:first-child {
+      margin: initial;
+    }
+
+    &__container label {
+      flex: 1;
+      width: 100%;
+    }
+    
+    &__textarea {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+}

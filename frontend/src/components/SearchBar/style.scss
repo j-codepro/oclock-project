@@ -1,0 +1,130 @@
+@use 'src/styles/_vars.scss' as v;
+
+.searchbar {
+    position: relative;
+    z-index: 4 !important;
+    background-color:rgba(255,255,255,.80);
+    border-radius: 16px;
+    box-shadow: v.$shadow;
+    padding: 30px;
+    margin: 40px 20px;
+    width: calc(100% - 40px);
+    max-width: 1240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+      position: relative;
+    }
+    
+    &__input {
+        border-radius: 25px 0 0 25px;
+        border: 1px solid #dedede;
+        border-right: none;
+        padding: 15px 0 15px 40px;
+        margin-right: -5px;
+        width: 30vw;
+        outline: none;
+        font-size: 16px;
+    }
+
+    &__button {
+        border-radius: 0 25px 25px 0;
+        border-left: none;
+        padding: 16px 40px;
+        border: none;
+        background-color: v.$primaryColor;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 25px;
+    }
+
+    &__link {
+        border-radius: 25px;
+        padding: 16px 40px;
+        color: white;
+        background-color: v.$secondaryColor;
+        text-decoration: none;
+        font-size: 16px;
+        border: none;
+    }
+
+    &__spacer {
+        margin: 30px;
+        font-size: 16px;
+    }
+
+    &__error {
+      padding-top: .75rem;
+      text-align: center;
+      color: v.$primaryColor;
+      font-size: .9em;
+    }
+}
+
+.autocomplete {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 1rem;
+  background: #eee;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+  &__item {
+    padding: .375rem 1rem .375rem 1.5rem;
+    border-radius: 100em;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0,0,0,.05);
+    }
+  }
+
+  &__detail {
+    font-size: .8em;
+    opacity: .5;
+  }
+}
+
+@media (max-width: 925px) {
+    .searchbar {
+     // &__container {
+        flex-direction: column;
+        margin: 0 20px;
+     // }
+
+      &__input {
+          width: 40vw;
+      }
+    }
+}
+
+@media (max-width: 567px) {
+    .searchbar {
+      &__button {
+          border-radius: 0 0 25px 25px;
+      }
+
+      &__input {
+          border-radius: 25px 25px 0 0;
+          width: 60vw;
+          margin: 0;
+          border: 1px solid #dedede;
+      }
+
+      &__container {
+          display: flex;
+          flex-direction: column;
+      }
+    }
+}
